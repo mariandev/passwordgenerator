@@ -1,0 +1,45 @@
+*{margin: 0;}
+body{
+	background: #ccc;
+}
+#wrap{
+	width: 100%;
+	height: auto;
+	text-align: center;
+	margin: 5em 0 0 0;
+}
+	h1{
+		font-family: sans-serif, Arial;
+	}
+	h2{
+		font-family: sans-serif, Arial;
+	}
+	h3{
+		font-family: sans-serif, Arial;
+	}
+	form{
+		width: 50%;
+		margin: 0 auto;
+	}
+		input[type="text"],
+		input[type="submit"]{
+			height: 2em;
+			font-size: 1em;
+			display: inline-block;
+			-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+			font-family: sans-serif, Arial;
+		}
+		table{
+			margin: 0 auto;
+			width: 50%;
+			text-align: left;
+		}
+	#password{
+		background: transparent;
+		border: 0;
+		width: auto;
+	}
+		#password:hover{
+			cursor: pointer;
+		}

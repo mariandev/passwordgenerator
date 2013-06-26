@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<title>Password generator by mariandev</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="wrap">
+		<h1>Password generator</h1>
+		<br><br>
+		<form action="javascript: generate()">
+			<input type="text" id="phrase" placeholder="Phrase"><input type="submit" value="Generate password"><br><br>
+			<table>
+				<tr>
+					<td><input type="checkbox" id="numbers" checked> Allow numbers</td>
+					<td><input type="checkbox" id="letters" checked> Allow letters</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="symbols"> Allow symbols</td>
+					<td><input type="checkbox" id="capletters"> Allow capitalized letters</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="checkbox" id="unique"> Unique (*phrase not required)</td>
+				</tr>
+			</table>
+		</form>
+		<br><br><br>
+		<div id="pass_wrap" style="display: none;">
+			<h2>
+				Password: <span id="password" data-clipboard-text=""></span>
+			</h2><br>
+			<h4>
+				Click the password to copy.
+			</h4>
+		</div>
+		<div id="err_wrap" style="display: none;">
+			<h2>
+				Error: <span id="error"></span>
+			</h2>
+		</div>
+	</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src="js/ZeroClipboard.min.js"></script>
+	<script src="js/pass_gen.js"></script>
+</body>
+</html>

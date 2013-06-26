@@ -55,7 +55,7 @@
 
 				$encoded_string = '';
 
-				for($i=0;$i<count($letters_pos_to_encode);$i){
+				for($i=0;$i<count($letters_pos_to_encode);$i++){
 					$l = array_search($string[$letters_pos_to_encode[$i]], $charset);
 					if($l-1>=0 && $l-1<$charset_length) $encoded_string .= $charset[$l-1];
 					if($l+1>=0 && $l+1<$charset_length) $encoded_string .= $charset[$l+1];

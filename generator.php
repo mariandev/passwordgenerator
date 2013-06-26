@@ -51,40 +51,14 @@
 				$charset_length = count($charset);
 				$string_length = count($string);
 
-				$first_letter = $string[0];
-				$middle_letter = $string[ ($string_length-1)/2 ];
-				$last_letter = $string[$string_length-1];
-
-				$first_letter_left_neighbour = array_search($first_letter, $charset)-1;
-				$first_letter_right_neighbour = array_search($first_letter, $charset)+1;
- 
-				$middle_letter_left_neighbour = array_search($middle_letter, $charset)-1;
-				$middle_letter_right_neighbour = array_search($middle_letter, $charset)+1;
-
-				$last_letter_left_neighbour = array_search($last_letter, $charset)-1;
-				$last_letter_right_neighbour = array_search($last_letter, $charset)+1;
+				$letters_pos_to_encode = array(0, ($string_length-1)/2, $string_length-1);
 
 				$encoded_string = '';
 
-				if($first_letter_left_neighbour > -1 && $first_letter_left_neighbour < $charset_length){
-					$encoded_string .= $charset[$first_letter_left_neighbour];
-				}
-				if($first_letter_right_neighbour > -1 && $first_letter_right_neighbour < $charset_length){
-					$encoded_string .= $charset[$first_letter_right_neighbour];
-				}
-
-				if($middle_letter_left_neighbour > -1 && $middle_letter_left_neighbour < $charset_length){
-					$encoded_string .= $charset[$middle_letter_left_neighbour];
-				}
-				if($middle_letter_right_neighbour > -1 && $middle_letter_right_neighbour < $charset_length){
-					$encoded_string .= $charset[$middle_letter_right_neighbour];
-				}
-
-				if($last_letter_left_neighbour > -1 && $last_letter_left_neighbour < $charset_length){
-					$encoded_string .= $charset[$last_letter_left_neighbour];
-				}
-				if($last_letter_right_neighbour > -1 && $last_letter_right_neighbour < $charset_length){
-					$encoded_string .= $charset[$last_letter_right_neighbour];
+				for($i=0;$i<count($letters_pos_to_encode);$i){
+					$l = array_search($string[$letters_pos_to_encode[$i]], $charset);
+					if($l-1>=0 && $l-1<$charset_length) $encoded_string .= $charset[$l-1];
+					if($l+1>=0 && $l+1<$charset_length) $encoded_string .= $charset[$l+1];
 				}
 
 				return $encoded_string;

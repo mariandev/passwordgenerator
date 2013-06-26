@@ -51,7 +51,7 @@
 				$charset_length = count($charset);
 				$string_length = count($string);
 
-				$letters_pos_to_encode = array(0, ($string_length-1)/2, $string_length-1);
+				$letters_pos_to_encode = array(0, round(($string_length-1)/2), $string_length-1);
 
 				$encoded_string = '';
 

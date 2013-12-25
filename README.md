@@ -3,9 +3,6 @@ Password Generator
 
 This is a simple password generator that you can use to create random password for your accounts.
 
-Demo
-====
-	http://passgen.mariandev.eu/
 
 Features
 ========
